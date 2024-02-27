@@ -114,7 +114,7 @@ if show_tops == 'TOP 10 with the highest share':
 else:
     st.plotly_chart(p2_fig)
 
-st.subheader("Countries which made the biggest jump in 5 yers")
+st.subheader("Countries which made the biggest jump in 5 years")
 
 top_progress = pd.read_csv('./data/top10_progress.csv')
 fig2 = px.bar(top_progress, x='Entity', y='per_points',
