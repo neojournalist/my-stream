@@ -116,8 +116,16 @@ if show_tops == 'TOP 10 with the highest share':
 else:
     st.plotly_chart(p2_fig)
 
-
-
+top_progress = pd.read_csv('top10_progress')
+fig2 = px.bar(top_progress, x='Entity', y='per_points',
+             hover_data=['Entity'],
+             labels={'Entity':'Country',
+                    'per_points': '% points'}, 
+             title = "TOP 10 countries which made the biggest jump in 5 years",
+             height=500, width=700)
+fig2.update_layout(
+    plot_bgcolor="white"
+)
     
 
 # means = reduced_df.groupby('class').mean(numeric_only=True)
