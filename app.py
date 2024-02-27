@@ -2,8 +2,8 @@
 import pandas as pd
 
 # matplotlib
-import matplotlib as mpl
-import matplotlib.pyplot as plt
+#import matplotlib as mpl
+#import matplotlib.pyplot as plt
 import seaborn as sns
 #plotly
 import plotly.express as px
