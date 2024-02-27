@@ -78,16 +78,14 @@ st.plotly_chart(fig)
 
 
 # Setting up columns
-left_column, right_column = st.columns(2)
+right_column = st.columns(1)
 
 
 
 # # Widgets: radio buttons
-show_tops = right_column.radio(
+show_tops = st.radio(
     label=' Share of internet users', options=['TOP 10 with the highest share', 'BOTTOM 10 with the lowest share'])
 
-plot_types = ["Matplotlib", "Plotly"]
-plot_type = left_column.radio("Choose Plot Type", plot_types)
 
 # Top 10
 top_20 = pd.read_csv('./data/top2020.csv')
@@ -118,7 +116,7 @@ else:
 
 st.subheader("Countries which made the biggest jump in 5 yers")
 
-top_progress = pd.read_csv('top10_progress')
+top_progress = pd.read_csv('./data/top10_progress.csv')
 fig2 = px.bar(top_progress, x='Entity', y='per_points',
              hover_data=['Entity'],
              labels={'Entity':'Country',
@@ -158,10 +156,7 @@ st.plotly_chart(fig2)
 #     p_fig.update_layout(showlegend=False)
 
 # # Select which plot to show
-if plot_type == "Matplotlib":
-    st.pyplot(fig)
-else:
-    st.plotly_chart(fig)
+
 
 # We can write stuff
 url = "https://ourworldindata.org/grapher/share-of-individuals-using-the-internet"
